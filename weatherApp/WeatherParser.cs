@@ -39,15 +39,14 @@ public class WeatherParser {
             int iconId;
 
             var day = dayElem[x].QuerySelectorAll("span");
-            var ico = dayElem[x].QuerySelector("div a div");
+            var ico = dayElem[x].QuerySelector("div > a > div");
 
             if (day.Count() < 4) {
-                MessageBox.Show(dayElem[x].OuterHtml);
-                throw new NotImplementedException();
+                continue;
             }
 
             if (ico is not IElement)
-                throw new NotImplementedException();
+                continue;
 
             weekDay = day[0].TextContent;
             if (x == 0) {
@@ -58,7 +57,7 @@ public class WeatherParser {
             dayTemp = day[2].TextContent;
             nightTemp = day[3].TextContent;
 
-            iconId = GetIconIDFromElementOuterHtml(ico);
+            iconId = GetIconIDFromElementOuterHtml(ico.OuterHtml);
 
             stamps[stampId] = new(weekDay, date, dayTemp, nightTemp, iconId);
             stampId++;
@@ -82,22 +81,19 @@ public class WeatherParser {
             string? humidity;
 
             var t = timeElem[x].QuerySelector(".AppHourlyItem_time__515ZC");
-            var p = timeElem[x].QuerySelector("div p");
-            var i = timeElem[x].QuerySelector("div div div");
-            var h = timeElem[x].QuerySelector("div div span");
+            var p = timeElem[x].QuerySelector("div > p");
+            var i = timeElem[x].QuerySelector("div > div > div");
+            var h = timeElem[x].QuerySelector("div > div > span");
 
             if (t is not IElement) {
-                if (timeElem[x].ChildElementCount == 0) {
-                    continue;
-                } else
-                    throw new NotImplementedException();
+                continue;
             }
 
             if (p is not IElement)
-                throw new NotImplementedException();
+                continue;
 
             if (i is not IElement)
-                throw new NotImplementedException();
+                continue;
 
             time = t.TextContent;
 
@@ -106,7 +102,7 @@ public class WeatherParser {
             }
 
             temp = p.TextContent;
-            iconId = GetIconIDFromElementOuterHtml(i);
+            iconId = GetIconIDFromElementOuterHtml(i.OuterHtml);
 
             if (h is not IElement) {
                 humidity = null;
@@ -145,17 +141,16 @@ public class WeatherParser {
         if (idData is not IElement)
             throw new NotImplementedException();
 
-        iconId = GetIconIDFromElementOuterHtml(idData);
+        iconId = GetIconIDFromElementOuterHtml(idData.OuterHtml);
 
         Header header = new(temp, desc, iconId);
         return header;
     }
 
-    private int GetIconIDFromElementOuterHtml(IElement elem) {
-        string outer = elem.OuterHtml;
+    private int GetIconIDFromElementOuterHtml(string outer) {
         int tempId = outer.LastIndexOf(':');
 
-        var t0 =int.TryParse($"{outer[tempId + 1]}", out int id0);
+        var t0 = int.TryParse($"{outer[tempId + 1]}", out int id0);
         var t1 = int.TryParse($"{outer[tempId + 2]}", out int id1);
 
         if (t0 && t1) {
