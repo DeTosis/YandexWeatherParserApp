@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:weatherApp"
         xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
         
+        ShowInTaskbar="False"
         mc:Ignorable="d"
         Background="Transparent"
         AllowsTransparency="True"
@@ -55,8 +56,11 @@
             </Border>
         </Grid>
         
-        <Grid Grid.Row="1" x:Name="header">
+        <Grid Grid.Row="1" >
             <Border CornerRadius="10" Margin="10" Background="#F7ECE1" Style="{StaticResource Shadow}">
+                <Grid x:Name="header">
+                    
+                </Grid>
             </Border>
         </Grid>
 

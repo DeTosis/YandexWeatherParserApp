@@ -39,7 +39,7 @@ public class WeatherParser {
             int iconId;
 
             var day = dayElem[x].QuerySelectorAll("span");
-            var ico = dayElem[x].QuerySelector("div > a > div");
+            var ico = dayElem[x].QuerySelector("a > div");
 
             if (day.Count() < 4) {
                 continue;
@@ -57,7 +57,8 @@ public class WeatherParser {
             dayTemp = day[2].TextContent;
             nightTemp = day[3].TextContent;
 
-            iconId = GetIconIDFromElementOuterHtml(ico.OuterHtml);
+            var i = ico.GetAttribute("style");
+            iconId = int.Parse(i.Split(":").Last());
 
             stamps[stampId] = new(weekDay, date, dayTemp, nightTemp, iconId);
             stampId++;
@@ -102,7 +103,9 @@ public class WeatherParser {
             }
 
             temp = p.TextContent;
-            iconId = GetIconIDFromElementOuterHtml(i.OuterHtml);
+            var tt = i.GetAttribute("style");
+            iconId = int.Parse(tt.Split(":").Last());
+
 
             if (h is not IElement) {
                 humidity = null;
@@ -113,7 +116,6 @@ public class WeatherParser {
             stamps[stampId] = new(time, temp, iconId, humidity);
             stampId++;
         }
-
 
         return stamps;
     }
@@ -141,23 +143,11 @@ public class WeatherParser {
         if (idData is not IElement)
             throw new NotImplementedException();
 
-        iconId = GetIconIDFromElementOuterHtml(idData.OuterHtml);
+        var i = idData.GetAttribute("style");
+        iconId = int.Parse(i.Split(":").Last());
 
         Header header = new(temp, desc, iconId);
         return header;
-    }
-
-    private int GetIconIDFromElementOuterHtml(string outer) {
-        int tempId = outer.LastIndexOf(':');
-
-        var t0 = int.TryParse($"{outer[tempId + 1]}", out int id0);
-        var t1 = int.TryParse($"{outer[tempId + 2]}", out int id1);
-
-        if (t0 && t1) {
-            return Convert.ToInt32($"{id0}{id1}");
-        } else {
-            return Convert.ToInt32($"{id0}");
-        }
     }
 
     private async Task<IDocument> GetPage(string state) {
