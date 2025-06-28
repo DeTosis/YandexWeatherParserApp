@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 1392 48">
+  <linearGradient id="i" x2="0" y2="1">
+    <stop stop-color="#FFC227"/>
+    <stop offset="1" stop-color="#FFB300"/>
+  </linearGradient>
+  <linearGradient id="k" x2="0" y2="1">
+    <stop stop-color="#9FC7FF"/>
+    <stop offset="1" stop-color="#9BC1F5"/>
+  </linearGradient>
+  <g id="d">
+    <path id="a" fill="#66afeb" d="M21 40.5a1.8 1.8 0 0 1-5.4-1.8q.9-1.8 3.6-3.6a.9.9 0 0 1 1.4.5q.8 3.6.4 4.9z"/>
+    <use x="9.5" href="#a"/>
+    <use x="44" href="#a"/>
+    <use x="52.5" href="#a"/>
+    <use x="61" href="#a"/>
+    <g id="b">
+      <use x="89" href="#a"/>
+      <use x="96.8" href="#a"/>
+    </g>
+    <use x="15.5" href="#b"/>
+    <path id="c" stroke="#67C8E2" stroke-width="2.4" d="M164.5 39.3h7m-5.2-3 3.4 6m-3.4 0 3.4-6"/>
+    <use x="42" href="#c"/>
+    <use x="54" href="#c"/>
+    <use x="85" href="#c"/>
+    <use x="96" href="#c"/>
+    <use x="107" href="#c"/>
+  </g>
+  <use x="288" href="#d"/>
+  <use x="576" href="#d"/>
+  <use x="710" href="#c"/>
+  <use x="870" href="#a"/>
+  <use x="879" href="#a"/>
+  <rect id="e" width="6.7" height="6.7" fill="#67C8E2" rx="1.5" transform="rotate(45 421 1134)"/>
+  <use x="10.5" href="#e"/>
+  <use x="21" href="#e"/>
+  <use x="1000" href="#a"/>
+  <use x="1024" href="#a"/>
+  <use x="143" href="#e"/>
+  <use x="167" href="#e"/>
+  <g fill="url(#i)" stroke="url(#i)">
+    <g id="g">
+      <path id="f" d="M25 14a9 9 0 1 1 0 .1zm307 2a7.4 7.4 0 0 1-7-12 9 9 0 1 0 7 12z"/>
+      <use x="48" href="#f"/>
+    </g>
+    <use x="96" href="#g"/>
+    <use x="192" href="#g"/>
+    <path d="M1129 17a10.5 10.5 0 1 1 0 .1zm70 3a8.7 8.7 0 0 1-8.5-14 10.5 10.5 0 1 0 8.5 14z"/>
+    <path id="h" stroke-width="1.5" d="M980 34h6l-2 4.5h3.5l-8 7 2-6.5H978z"/>
+    <use x="48" href="#h"/>
+    <use x="97" href="#h"/>
+    <path d="M1261 24a11 11 0 1 1 0 .1zm77 5.5a13.5 13.5 0 0 1-13-22 16 16 0 1 0 13 22z"/>
+    <path stroke-width="4" d="m1254.5 17.2 3 1m7.5-11.5 1 3m12 0 1-3m7.5 11 3-1m0 14-3-1m-7.5 11.5-1-3m-12 0-1 3m-7.5-11-3 1"/>
+  </g>
+  <path fill="#73a5e6" d="M1221 13a9 9 0 0 1 19 5 5 5 0 0 1 0 12z" opacity=".3"/>
+  <g id="n">
+    <g id="m">
+      <path id="l" fill="url(#k)" d="M12 31.5a5 5 0 0 1 1-11A9 9 0 0 1 32 16a6 6 0 0 1 2 15.5z"/>
+      <use x="48" href="#l"/>
+    </g>
+    <use x="96" href="#m"/>
+  </g>
+  <use x="192" href="#n"/>
+  <use x="384" href="#n"/>
+  <g id="q">
+    <g id="p">
+      <use id="o" href="#l" transform="matrix(1.1 0 0 1.1 573 -3)"/>
+      <use x="48" href="#o"/>
+    </g>
+    <use x="96" href="#p"/>
+  </g>
+  <use x="192" href="#q"/>
+  <use x="384" href="#p"/>
+  <use x="480" href="#o"/>
+  <use id="r" href="#l" transform="matrix(1.15 0 0 1.15 1100 2)"/>
+  <use x="48" href="#r"/>
+  <use x="94" href="#r"/>
+</svg>

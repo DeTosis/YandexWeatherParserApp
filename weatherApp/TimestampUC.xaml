@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="weatherApp.TimestampUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:weatherApp"
+             xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="48">
+    <Border Margin="2" CornerRadius="4" Background="Red" x:Name="bgSwitch">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Label x:Name="Time"
+                   FontFamily="#Open Sans Light"
+                   FontSize="14"></Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Canvas Width="48" Height="48" 
+                        HorizontalAlignment="Left"
+                        ClipToBounds="True">
+                    <svg:SvgViewbox 
+                            x:Name="timestampIco"
+                            Source="weather_icons.svg" 
+                            Width="1344" Height="48"
+                            Stretch="None"
+                        />
+                </Canvas>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label x:Name="Temperature" 
+                   FontFamily="#Open Sans Light"
+                   FontSize="16"></Label>
+            </Grid>
+        </Grid>
+    </Border>
+
+</UserControl>
